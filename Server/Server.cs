@@ -92,12 +92,22 @@ namespace Server
 
                         if (user.password == split[2])
                         {
+                            Console.WriteLine($"{user.username} has logged in.");
                             return "Auth successful";
                         }
 
                         return "Auth unsuccessful";
                     }
+
                     return "Auth unsuccessful";
+                case 2:
+                    if (!User.UserExists(split[1]))
+                    {
+                        DataBasing.NewUser(split[1], split[2]);
+                        Console.WriteLine($"{split[1]} has logged in.");
+                        return "Signup successful";
+                    }
+                    return "Signup failed";
             }
 
             return "";

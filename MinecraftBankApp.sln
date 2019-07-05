@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinecraftBankApp", "MinecraftBankApp\MinecraftBankApp.csproj", "{9E7CCE51-9201-46F7-82FD-7B70168C73AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{DBE6DDCE-F6AF-4A60-8FAC-01B269E00724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E7CCE51-9201-46F7-82FD-7B70168C73AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7CCE51-9201-46F7-82FD-7B70168C73AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7CCE51-9201-46F7-82FD-7B70168C73AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7CCE51-9201-46F7-82FD-7B70168C73AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE6DDCE-F6AF-4A60-8FAC-01B269E00724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE6DDCE-F6AF-4A60-8FAC-01B269E00724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE6DDCE-F6AF-4A60-8FAC-01B269E00724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE6DDCE-F6AF-4A60-8FAC-01B269E00724}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4EFFFF0-50C7-4C47-BFD1-3CA2B8DB56F7}
+	EndGlobalSection
+EndGlobal

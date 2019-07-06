@@ -11,13 +11,15 @@ namespace Server
         public string password;
         public int permission;
         public float balance;
-        public User(string path)
+        static string path = @"C:\Users\Divie\Documents\Server Info\Users\";
+        public User(string user)
         {
-            StreamReader fs = new StreamReader(path);
-            username = new DirectoryInfo(path).Name.Replace(".txt", "");
+            string userPath = path + user + ".txt";
+            StreamReader fs = new StreamReader(userPath);
+            username = new DirectoryInfo(userPath).Name.Replace(".txt", "");
             password = fs.ReadLine();
-            permission = 1;
-            balance = 450.46f;
+            permission = int.Parse(fs.ReadLine());
+            balance = float.Parse(fs.ReadLine());
             fs.Close();
         }
 
@@ -30,8 +32,7 @@ namespace Server
                 user.balance.ToString()
             };
 
-            DirectoryInfo dirinfo = new DirectoryInfo(@"..\..\..\..\Server\Users");
-            File.WriteAllLines(dirinfo.FullName + @"\" + user.username + ".txt", info);
+            File.WriteAllLines(path + user.username + ".txt", info);
         }
 
         public static void SaveUser(string username, string password, string permission, string balance)
@@ -43,25 +44,17 @@ namespace Server
                 balance
             };
 
-            DirectoryInfo dirinfo = new DirectoryInfo(@"..\..\..\..\Server\Users");
-            File.WriteAllLines(dirinfo.FullName + @"\" + username + ".txt", info);
+            File.WriteAllLines(path + username + ".txt", info);
         }
 
         public static bool UserExists(string user)
         {
-            DirectoryInfo info = new DirectoryInfo(@"..\..\..\..\Server\Users");
-            if (File.Exists(info.FullName + @"\" + user + ".txt"))
+            if (File.Exists(path + user + ".txt"))
             {
                 return true;
             }
 
             return false;
-        }
-
-        public static string Test()
-        {
-            DirectoryInfo info = new DirectoryInfo(@"..\..\..\..\Server\Users");
-            return info.FullName;
         }
     }
 }

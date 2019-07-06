@@ -1,0 +1,14 @@
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\hostpolicy.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\hostfxr.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\Server.exe
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\Server.deps.json
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\Server.runtimeconfig.json
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\Server.runtimeconfig.dev.json
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\Server.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\bin\Release\netcoreapp2.1\win-x64\Server.pdb
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\obj\Release\netcoreapp2.1\win-x64\Server.csproj.CoreCompileInputs.cache
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\obj\Release\netcoreapp2.1\win-x64\Server.AssemblyInfoInputs.cache
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\obj\Release\netcoreapp2.1\win-x64\Server.AssemblyInfo.cs
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\obj\Release\netcoreapp2.1\win-x64\Server.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\obj\Release\netcoreapp2.1\win-x64\Server.pdb
+C:\Users\Divie\source\repos\MinecraftBankApp\Server\obj\Release\netcoreapp2.1\win-x64\Server.csprojAssemblyReference.cache

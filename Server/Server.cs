@@ -16,6 +16,7 @@ namespace Server
 
         static void Main(string[] args)
         {
+            DirectoryCreation.CreateDirectories();
             Console.Title = "Server";
             Console.WriteLine("Welcome to MCBank! Please type a valid Port.");
 
@@ -87,8 +88,7 @@ namespace Server
                 case 1:
                     if (User.UserExists(split[1]))
                     {
-                        DirectoryInfo info = new DirectoryInfo(@"..\..\..\..\Server\Users");
-                        User user = new User(info.FullName + @"\" + split[1] + ".txt");
+                        User user = new User(split[1]);
 
                         if (user.password == split[2])
                         {
@@ -108,8 +108,168 @@ namespace Server
                         return "Signup successful";
                     }
                     return "Signup failed";
-            }
+                case 3:
+                    return new User(split[1]).balance.ToString("0.00");
+                case 4:
+                    FileInfo[] information = DataBasing.GetFiles();
 
+                    string usernames = "";
+
+                    for (int j = 0; j < information.Length; j++)
+                    {
+                        if (j < information.Length - 1)
+                        {
+                            usernames += information[j].Name.Replace(".txt", ", ");
+                        }
+                        else
+                        {
+                            usernames += information[j].Name.Replace(".txt", "");
+                        }
+                    }
+
+                    return usernames;
+                case 5:
+                    if (User.UserExists(split[1]))
+                    {
+                        return new User(split[1]).permission.ToString();
+                    }
+
+                    return "-1";
+                case 6:
+                    if (User.UserExists(split[1]))
+                    {
+                        User user = new User(split[1]);
+
+                        float num;
+
+                        if (float.TryParse(split[2], out num))
+                        {
+                            if (num < 0)
+                            {
+                                return "The fund parameter cannot be a negative number.";
+                            }
+                            user.balance += num;
+                            User.SaveUser(user);
+                            Transaction.AppendTransaction(user.username, "Bank", "Deposit", num.ToString("0.00"));
+                            return "Funding successful.";
+                        }
+                        return "The fund parameter is not a float.";
+                    }
+                    return "User does not exist.";
+                case 7:
+                    if (User.UserExists(split[2]))
+                    {
+                        User user = new User(split[1]);
+                        User user2 = new User(split[2]);
+
+                        float num;
+
+                        if (float.TryParse(split[3], out num))
+                        {
+                            if (num < 0)
+                            {
+                                return "The fund parameter cannot be a negative number.";
+                            }
+
+                            if (user.balance < num)
+                            {
+                                return "Your balance is too low for this transaction.";
+                            }
+
+                            if (user.username.ToLower() == user2.username.ToLower())
+                            {
+                                return "You cannot fund yourself.";
+                            }
+
+                            user2.balance += num;
+                            user.balance -= num;
+                            User.SaveUser(user);
+                            User.SaveUser(user2);
+                            Transaction.AppendTransaction(user.username, user2.username, "Withdrawal", num.ToString("0.00"));
+                            Transaction.AppendTransaction(user2.username, user.username, "Deposit", num.ToString("0.00"));
+                            return "Funding successful.";
+                        }
+                        return "The fund parameter is not a float.";
+                    }
+                    return "User does not exist.";
+                case 8:
+                    if (User.UserExists(split[1]))
+                    {
+                        User user = new User(split[1]);
+
+                        float num;
+
+                        if (float.TryParse(split[2], out num))
+                        {
+                            if (num < 0)
+                            {
+                                return "The funds parameter cannot be a negative number.";
+                            }
+                            user.balance -= num;
+                            User.SaveUser(user);
+                            Transaction.AppendTransaction(user.username, "Bank", "Withdrawal", num.ToString("0.00"));
+                            return "Withdraw successful.";
+                        }
+                        return "The funds parameter is not a float.";
+                    }
+                    return "User does not exist.";
+                case 9:
+                    if (User.UserExists(split[1]))
+                    {
+                        int permission;
+
+                        if (!int.TryParse(split[2], out permission))
+                        {
+                            return "Permission parameter is not a number.";
+                        }
+
+                        if (permission < 0 || permission > 1)
+                        {
+                            return "Permission parameter is out of range.";
+                        }
+
+                        User user = new User(split[1]);
+
+                        if (user.permission == permission && permission == 1)
+                        {
+                            return $"{split[1]} already has admin permissions.";
+                        }
+
+                        if (user.permission == permission && permission == 0)
+                        {
+                            return $"{split[1]} already has basic permissions.";
+                        }
+
+                        if (user.username.ToLower() == DataBasing.CheckOwner().ToLower())
+                        {
+                            return "Admin permissions cannot be revoked from owner.";
+                        }
+
+                        user.permission = permission;
+
+                        User.SaveUser(user);
+
+                        if (permission == 1)
+                        {
+                            return $"{split[1]} has been granted admin permissions.";
+                        }
+
+                        return $"{split[1]} has been granted basic permissions.";
+                    }
+
+                    return "User does not exist.";
+                case 10:
+                    return Transaction.GetTransactions();
+                case 11:
+                    if (User.UserExists(split[1]))
+                    {
+                        return Transaction.GetTransactions(split[1]);
+                    }
+
+                    return "User does not exist.";
+                case 12:
+                    return Conversions.ReturnConversions();
+            }
             return "";
         }
     }

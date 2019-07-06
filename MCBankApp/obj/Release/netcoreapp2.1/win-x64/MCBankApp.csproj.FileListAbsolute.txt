@@ -1,0 +1,14 @@
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\hostpolicy.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\hostfxr.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\MCBankApp.exe
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\MCBankApp.deps.json
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\MCBankApp.runtimeconfig.json
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\MCBankApp.runtimeconfig.dev.json
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\MCBankApp.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\bin\Release\netcoreapp2.1\win-x64\MCBankApp.pdb
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\obj\Release\netcoreapp2.1\win-x64\MCBankApp.csprojAssemblyReference.cache
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\obj\Release\netcoreapp2.1\win-x64\MCBankApp.csproj.CoreCompileInputs.cache
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\obj\Release\netcoreapp2.1\win-x64\MCBankApp.AssemblyInfoInputs.cache
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\obj\Release\netcoreapp2.1\win-x64\MCBankApp.AssemblyInfo.cs
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\obj\Release\netcoreapp2.1\win-x64\MCBankApp.dll
+C:\Users\Divie\source\repos\MinecraftBankApp\MCBankApp\obj\Release\netcoreapp2.1\win-x64\MCBankApp.pdb

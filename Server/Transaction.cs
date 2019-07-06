@@ -68,7 +68,7 @@ namespace Server
 
                     string[] split = transaction.Split(new char[] { ' ' });
 
-                    if (split[0] == username)
+                    if (split[0].ToLower() == username.ToLower())
                     {
                         transactions += transaction + "\n";
                     }

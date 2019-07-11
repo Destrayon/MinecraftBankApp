@@ -9,10 +9,12 @@ namespace Server
     {
         public static DirectoryInfo usersFolder = new DirectoryInfo(@"C:\Users\Divie\Documents\Server Info\Users");
 
-        public static int userAmount = usersFolder.GetFiles().Length;
+        public static int userAmount;
 
         public static void NewUser(string username, string password)
         {
+            userAmount = usersFolder.GetFiles().Length;
+
             if (userAmount == 0)
             {
                 using (FileStream w = File.Open(@"C:\Users\Divie\Documents\Server Info\Owner\Owner.txt", FileMode.Create))

@@ -140,7 +140,7 @@ namespace MCBankApp
 
             if (permission == 1)
             {
-                commandsList += "/check balance {username}\n/check permissions {username}\n/check balance {username}\n/fund {username} {amount} bankfund\n/withdraw {username} {amount}\n/set {username} permissions {permission}\n/get transactions all\n/get transactions {username}\n";
+                commandsList += "/check balance {username}\n/check permissions {username}\n/fund {username} {amount} bankfund\n/withdraw {username} {amount}\n/set {username} permissions {permission}\n/get transactions all\n/get transactions {username}\n";
             }
 
             commandsList += "/check balance\n/check users\n/check permissions\n/check permissions raw\n/fund {username} {amount}\n/get transactions\n/get conversions\n/clear\n";
